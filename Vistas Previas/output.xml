@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20220313 13:40:49.296" rpa="false" schemaversion="2">
+<suite id="s1" name="Vistas Previas" source="C:\Users\Luigi\Desktop\Automatizacion\Vistas Previas\Vistas Previas.py">
+<test id="s1-t1" name="001 Visualizacion Vistas Previas">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220313 13:40:49.475" endtime="20220313 13:40:49.475"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://automationpractice.com/index.php</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220313 13:40:49.475" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20220313 13:40:49.475" endtime="20220313 13:40:57.672"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1365</arg>
+<arg>924</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220313 13:40:57.672" endtime="20220313 13:40:58.089"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#home-page-tabs &gt; li:nth-child(2) &gt; a</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:40:58.089" endtime="20220313 13:40:58.724"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#home-page-tabs &gt; li:nth-child(2) &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:40:58.724" level="INFO">Clicking element 'css=#home-page-tabs &gt; li:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:40:58.724" endtime="20220313 13:40:59.370"/>
+</kw>
+<for flavor="IN">
+<var>${cadaItem}</var>
+<value>@{items}</value>
+<iter>
+<var name="${cadaItem}">1</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:40:59.370" endtime="20220313 13:41:00.005"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:00.644" level="INFO">${titulo} = Printed Chiffon Dress</msg>
+<status status="PASS" starttime="20220313 13:41:00.005" endtime="20220313 13:41:00.644"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:00.644" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(1) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:00.644" endtime="20220313 13:41:01.301"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:01.301" endtime="20220313 13:41:03.602"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:03.602" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:03.602" endtime="20220313 13:41:04.222"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:04.222" endtime="20220313 13:41:04.840"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:04.840" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Printed Chiffon Dress'.</msg>
+<status status="PASS" starttime="20220313 13:41:04.840" endtime="20220313 13:41:05.458"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:05.458" endtime="20220313 13:41:05.768"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:05.768" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:05.768" endtime="20220313 13:41:06.397"/>
+</kw>
+<status status="PASS" starttime="20220313 13:40:59.370" endtime="20220313 13:41:06.397"/>
+</iter>
+<iter>
+<var name="${cadaItem}">2</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:06.397" endtime="20220313 13:41:07.010"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:07.642" level="INFO">${titulo} = Faded Short Sleeve T-shirts</msg>
+<status status="PASS" starttime="20220313 13:41:07.010" endtime="20220313 13:41:07.642"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:07.642" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(2) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:07.642" endtime="20220313 13:41:08.303"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:08.303" endtime="20220313 13:41:12.204"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:12.204" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:12.204" endtime="20220313 13:41:12.825"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:12.825" endtime="20220313 13:41:13.454"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:13.454" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Faded Short Sleeve T-shirts'.</msg>
+<status status="PASS" starttime="20220313 13:41:13.454" endtime="20220313 13:41:14.087"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:14.087" endtime="20220313 13:41:14.395"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:14.395" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:14.395" endtime="20220313 13:41:15.041"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:06.397" endtime="20220313 13:41:15.041"/>
+</iter>
+<iter>
+<var name="${cadaItem}">3</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:15.041" endtime="20220313 13:41:15.668"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:16.286" level="INFO">${titulo} = Blouse</msg>
+<status status="PASS" starttime="20220313 13:41:15.668" endtime="20220313 13:41:16.286"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:16.286" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(3) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:16.286" endtime="20220313 13:41:16.952"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:16.952" endtime="20220313 13:41:20.879"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:20.879" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:20.879" endtime="20220313 13:41:21.513"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:21.513" endtime="20220313 13:41:22.127"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:22.127" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Blouse'.</msg>
+<status status="PASS" starttime="20220313 13:41:22.127" endtime="20220313 13:41:22.757"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:22.757" endtime="20220313 13:41:23.069"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:23.069" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:23.069" endtime="20220313 13:41:23.703"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:15.041" endtime="20220313 13:41:23.703"/>
+</iter>
+<iter>
+<var name="${cadaItem}">4</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:23.703" endtime="20220313 13:41:24.331"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:24.961" level="INFO">${titulo} = Printed Summer Dress</msg>
+<status status="PASS" starttime="20220313 13:41:24.331" endtime="20220313 13:41:24.961"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:24.961" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(4) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:24.961" endtime="20220313 13:41:25.622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:25.622" endtime="20220313 13:41:29.530"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:29.530" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:29.530" endtime="20220313 13:41:30.150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:30.150" endtime="20220313 13:41:30.768"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:30.768" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Printed Summer Dress'.</msg>
+<status status="PASS" starttime="20220313 13:41:30.768" endtime="20220313 13:41:31.399"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:31.399" endtime="20220313 13:41:31.703"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:31.703" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:31.703" endtime="20220313 13:41:32.335"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:23.703" endtime="20220313 13:41:32.335"/>
+</iter>
+<iter>
+<var name="${cadaItem}">5</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:32.335" endtime="20220313 13:41:32.952"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:33.583" level="INFO">${titulo} = Printed Dress</msg>
+<status status="PASS" starttime="20220313 13:41:32.952" endtime="20220313 13:41:33.583"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:33.583" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(5) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:33.583" endtime="20220313 13:41:34.247"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:34.247" endtime="20220313 13:41:39.830"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:39.830" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:39.830" endtime="20220313 13:41:40.462"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:40.462" endtime="20220313 13:41:41.079"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:41.079" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Printed Dress'.</msg>
+<status status="PASS" starttime="20220313 13:41:41.079" endtime="20220313 13:41:41.709"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:41.709" endtime="20220313 13:41:42.015"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:42.015" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:42.015" endtime="20220313 13:41:42.648"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:32.335" endtime="20220313 13:41:42.648"/>
+</iter>
+<iter>
+<var name="${cadaItem}">6</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:42.648" endtime="20220313 13:41:43.274"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:43.906" level="INFO">${titulo} = Printed Summer Dress</msg>
+<status status="PASS" starttime="20220313 13:41:43.274" endtime="20220313 13:41:43.906"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:43.906" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(6) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:43.906" endtime="20220313 13:41:44.573"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:44.573" endtime="20220313 13:41:46.854"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:46.854" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:46.854" endtime="20220313 13:41:47.485"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:47.485" endtime="20220313 13:41:48.102"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:48.102" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Printed Summer Dress'.</msg>
+<status status="PASS" starttime="20220313 13:41:48.102" endtime="20220313 13:41:48.723"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:48.723" endtime="20220313 13:41:49.033"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:49.033" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:49.033" endtime="20220313 13:41:49.665"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:42.648" endtime="20220313 13:41:49.665"/>
+</iter>
+<iter>
+<var name="${cadaItem}">7</var>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220313 13:41:49.665" endtime="20220313 13:41:50.285"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${titulo}</var>
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.right-block &gt; h5 &gt; a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:50.915" level="INFO">${titulo} = Printed Dress</msg>
+<status status="PASS" starttime="20220313 13:41:50.285" endtime="20220313 13:41:50.915"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blockbestsellers &gt; li:nth-child(${cadaItem}) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:50.915" level="INFO">Clicking element 'css=#blockbestsellers &gt; li:nth-child(7) &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" starttime="20220313 13:41:50.915" endtime="20220313 13:41:51.579"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:51.580" endtime="20220313 13:41:53.012"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220313 13:41:53.012" level="INFO">Selecting frame 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; div &gt; div &gt; iframe'.</msg>
+<status status="PASS" starttime="20220313 13:41:53.012" endtime="20220313 13:41:53.631"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220313 13:41:53.631" endtime="20220313 13:41:54.251"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220313 13:41:54.251" level="INFO">Verifying element 'css=#product &gt; div &gt; div &gt; div.pb-center-column.col-xs-12.col-sm-4 &gt; h1' contains exact text 'Printed Dress'.</msg>
+<status status="PASS" starttime="20220313 13:41:54.251" endtime="20220313 13:41:54.866"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220313 13:41:54.866" endtime="20220313 13:41:55.175"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220313 13:41:55.175" level="INFO">Clicking element 'css=#index &gt; div.fancybox-overlay.fancybox-overlay-fixed &gt; div &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20220313 13:41:55.175" endtime="20220313 13:41:55.808"/>
+</kw>
+<status status="PASS" starttime="20220313 13:41:49.665" endtime="20220313 13:41:55.808"/>
+</iter>
+<status status="PASS" starttime="20220313 13:40:59.370" endtime="20220313 13:41:55.808"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220313 13:41:55.808" endtime="20220313 13:41:58.144"/>
+</kw>
+<status status="PASS" starttime="20220313 13:40:49.474" endtime="20220313 13:41:58.144"/>
+</test>
+<status status="PASS" starttime="20220313 13:40:49.297" endtime="20220313 13:41:58.145"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Vistas Previas">Vistas Previas</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
